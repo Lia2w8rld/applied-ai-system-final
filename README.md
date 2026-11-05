@@ -25,11 +25,6 @@ User profile → load songs from CSV → score each song → sort by score → t
 | Energy, valence, danceability, acousticness | up to +1 each (1 − difference from target) |
 | Tempo | up to +1 (difference normalized, since BPM uses a different scale) |
 
-## Sample output
-
-```
-<!-- Run `python -m src.main` and paste the real output here -->
-```
 
 ## Experiments
 
