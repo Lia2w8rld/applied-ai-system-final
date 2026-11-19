@@ -41,3 +41,24 @@
 **How does the pattern appear in your final code?**
 
 <!-- Point to the relevant class or method -->
+
+---
+
+# Project 4 log: VibeFinder 2.0
+
+| Step | What I asked Claude | What came back | What I did |
+|---|---|---|---|
+| Plan | Extend my music recommender; I want similar artists and learning from skips | Plan: RAG over notes + learning from history + eval harness | Followed it; skipped the optional agent loop |
+| Data | Add songs and notes for 12 artists | 24 songs, sample history, 28 notes | Committed; normalized `rnb` to `r&b` |
+| Code | Write the modules | `history.py`, `retriever.py`, `pipeline.py`, `cli.py`, `eval.py`, tests | Ran all of them; 6/6 tests pass |
+| Debug | `python: command not found`, empty output files | Use `python3`, regenerate outputs | Regenerated and recommitted |
+
+## Saved pipeline trace (from `python3 -m src.cli`)
+
+```
+- Learned profile from 30 history rows; weights={'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+- Retrieved 6 notes; neighbor genres=[]; similar artists=[...]
+- Scored 27 unheard songs; confidence=0.62
+```
+
+Observation: `neighbor genres=[]` showed the neighbor-genre path never fired on this history. Documented as a limitation. Full traces: `assets/sample_run_retrieval.txt`.

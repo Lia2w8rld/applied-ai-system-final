@@ -1,95 +1,55 @@
-# 🎧 Model Card: Music Recommender Simulation
+# Model Card: VibeFinder 2.0
 
-## 1. Model Name
+**Base project:** VibeFinder: Music Recommender Simulation (Module 3). This card covers the extended Project 4 system. The original card is in `assets/model_card_module3.md`.
 
-**VibeFinder 1.0: Music Recommender Simulation**
+## Intended use
+Classroom demonstration of a history-aware, explainable music recommender. Not intended for real listeners at scale or for any decision that affects people.
 
-VibeFinder is a content-based music recommender that ranks songs according to a user's preferred genre, mood, and musical characteristics.
+## How it works
+1. Reads a listening history (like, replay, full_play, skip) and a 44-song catalog.
+2. Learns a target sound from kept songs, and raises the weight of features that separate kept songs from skipped ones.
+3. Optionally retrieves notes about genres and artists (TF-IDF over 28 hand-written notes) and uses them for similar-artist and neighbor-genre bonuses.
+4. Scores only unheard songs, returns the top 5 with reasons, and reports a confidence score (history size x score gap).
 
----
+## Data
+- **Catalog:** 20 fictional starter songs from the course + 24 real songs by 12 artists. Audio features (energy, valence, danceability, acousticness) and tempos are rough estimates drafted with Claude's help, **not measured from audio**.
+- **Listening history:** a 30-row hand-written sample, not real streaming data.
+- **Knowledge notes:** short notes on 16 genres and 12 artists, subjective and drafted with AI assistance.
 
-## 2. Intended Use
+## Evaluation results
+- `eval.py`: 8/8 cases passed (4 normal, 4 error cases); average confidence 0.23 on successful runs, low by design because several cases have very little history.
+- `pytest`: 6/6 passed.
+- Retrieval changed 1 of 5 recommendations vs. the baseline on the sample history (*Library Rain* became *Chain of Fools*).
+- Learned weights on the sample history: acousticness 1.75, energy 1.50, danceability 1.37, valence 1.02, which matches the skip pattern in the data.
 
-VibeFinder is designed to recommend songs that match a user's stated music preferences. It is intended for classroom exploration of recommendation algorithms and how scoring decisions influence the results.
+## Limitations and biases
+- **Simulated data.** Audio features and history are not real measurements, so the output shows the method works, not that it predicts real taste.
+- **Narrow catalog bias.** The real songs come from 12 artists, mostly r&b, neo soul, soul, and hip hop, so those genres dominate recommendations. Other genres, languages, and cultures are barely represented.
+- **Filter bubble.** Genres the listener keeps get a bonus and there is no diversity step, so it recommends more of the same.
+- **A skip is treated as dislike.** In reality people skip for many reasons (mood, context, already heard it today).
+- **Neighbor-genre bonus is dormant.** On the sample history the retriever returned only artist notes, so genre-neighbor boosts never fired. This was visible in the trace, not in the tests.
+- **Confidence is a heuristic, not calibrated.** It rises with more history and a bigger score gap, but it was never validated against real outcomes.
+- **Keyword retrieval.** TF-IDF matches words, not meaning, and the notes are small.
+- **Privacy.** Listening history is personal data. This system keeps it local and makes no network calls, but a real deployment would need consent and protection.
 
-The system considers a user's preferred genre and mood, target energy, valence, danceability, acousticness, and tempo. It assumes that these preferences provide a useful representation of the music the user wants to hear.
+## AI collaboration
+*(Draft based on the build session. Edit it so it is accurate to your experience.)*
 
-The system generates a ranked list of the top five songs from its catalog and explains why each song received its score. It does not learn from listening history, and it should not be treated as a replacement for a commercial music streaming recommendation system.
+**How I used AI.** I used Claude to map the assignment to a plan (RAG + learning from history + reliability harness), to write the code modules, to draft the catalog estimates, sample history, and knowledge notes, and to debug terminal errors (a missing GitHub repo, a pytest import path, and `python` vs `python3`). I chose the direction: extending my music recommender toward similar artists and learning from skips, and I picked the 12 artists.
 
----
+**Suggestion I accepted.** Claude proposed an offline TF-IDF retriever and a transparent weight-learning rule instead of an LLM API or a trained model. I accepted it because anyone can run the repo without an API key and every learned weight can be printed and explained.
 
-## 3. How the Model Works
+**Suggestions I revised or did not adopt.**
+- Claude's new catalog rows used the genre label `r&b`, but my starter data already used `rnb`. A genre check exposed the mismatch, and I normalized everything to `r&b` so the two wouldn't count as different genres.
+- Claude's first run commands used `python`, which doesn't exist on my Mac, so the first saved outputs were empty. I switched everything to `python3` and regenerated them.
+- Claude suggested an optional agentic self-check loop. I did not build it because of the deadline, and the trace in the CLI output is a pipeline log, not an agent.
 
-VibeFinder compares the user's preferences with the attributes of each song. It awards points when a song matches the preferred genre or mood and calculates similarity scores for energy, valence, danceability, acousticness, and tempo.
+**How I checked the AI's work.** I ran `eval.py` and `pytest`, read the printed trace, and compared the baseline and retrieval outputs. The trace is how I learned the neighbor-genre path never fired.
 
-The current scoring approach gives four points for a genre match, one point for a mood match, and up to one point for each of the five musical attribute similarities. The system then sorts songs from highest to lowest score and returns the top five recommendations, along with explanations of the scores.
+**TODO (yours):** add 1 to 2 sentences on whether the recommendations *feel* right to you as a listener, and whether you changed any catalog numbers or history rows.
 
-Compared with the original starter logic, which returned the first songs in the catalog, I implemented CSV loading, numeric conversion, a scoring function, ranked recommendations, and explanations. I also expanded the dataset to 20 songs and tested multiple user profiles.
-
-I experimented with increasing the genre-match bonus from two points to four points. This made genre preference more influential in the overall score.
-
----
-
-## 4. Data
-
-The recommender uses a CSV dataset containing **20 songs**. Each song has an ID, title, artist, genre, mood, energy, tempo in beats per minute, valence, danceability, and acousticness.
-
-I expanded the starter dataset by adding songs to create a larger catalog for testing. The catalog includes genres and moods represented by the three profiles I tested: pop and happy, lofi and chill, and rock and intense.
-
-The dataset is small and does not represent the full range of musical styles or listening preferences. Musical taste can also depend on lyrics, culture, memories, language, familiarity, production style, and personal experiences, none of which are fully captured by the current attributes.
-
----
-
-## 5. Strengths
-
-VibeFinder produces different recommendations for different preference profiles and provides explanations for its rankings.
-
-The High-Energy Pop profile ranked *Sunrise City* first, the Chill Lofi profile ranked *Library Rain* first, and the Deep Intense Rock profile ranked *Wildfire Run* first. These results generally matched the preferences specified in each profile.
-
-The model is also relatively easy to understand because its scoring rules are explicit. Changing a scoring weight makes it possible to observe how design decisions affect the scores and rankings.
-
----
-
-## 6. Limitations and Bias
-
-The system relies on a small catalog of 20 songs, so its recommendations are limited to the available data. Genres and moods that are not represented adequately cannot receive equally meaningful recommendations.
-
-The genre-match bonus is four points, while each individual musical similarity contributes at most one point. This means genre can have a stronger influence than any single musical characteristic. As a result, a song in the preferred genre may receive a higher score even when another song matches several other preferences more closely.
-
-The system does not consider listening history, explicit user feedback, lyrics, cultural context, or changes in a person's mood over time. It also does not currently prioritize diversity among artists or recommendations. Because the user profiles and song attributes are predefined, the results may not accurately represent the preferences of real listeners.
-
----
-
-## 7. Evaluation
-
-I tested VibeFinder using three profiles:
-
-- **High-Energy Pop:** Ranked *Sunrise City* first, with a score of 9.73.
-- **Chill Lofi:** Ranked *Library Rain* first, with a score of 9.78.
-- **Deep Intense Rock:** Ranked *Wildfire Run* first, with a score of 9.89.
-
-I checked that the program loaded all 20 songs, returned five recommendations per profile, sorted the results by score, and provided explanations. I also ran the project's automated tests, which passed.
-
-For an additional experiment, I increased the genre-match bonus from two points to four points. Songs matching the preferred genre gained two points, but the top-five ordering stayed the same for the three profiles I tested.
-
-I learned that changing a scoring rule does not always change the ranking. It can still affect the distance between scores and the relative importance of different preferences. The tests confirm that the program runs as expected, but they do not establish whether real listeners would enjoy the recommendations.
-
----
-
-## 8. Future Work
-
-I would improve VibeFinder by expanding the dataset to include more songs, genres, artists, and moods. I would also test additional profiles and compare their recommendations.
-
-Another improvement would be adding diversity to the ranking so that the top five results do not become repetitive. The model could also support more complex preferences, such as combining multiple favorite genres or allowing users to adjust the importance of different musical attributes.
-
-Finally, I would collect feedback from listeners to determine whether the recommendations match their actual tastes rather than relying only on predefined profiles.
-
----
-
-## 9. Personal Reflection
-
-This project taught me that a recommendation system reflects the choices made by the person designing its scoring rules. Even though the system uses numerical scores, those scores depend on decisions about which preferences matter most.
-
-I was interested to discover that increasing the genre-match bonus changed the scores without changing the top-five rankings for my three test profiles. This helped me understand why it is important to examine both scores and rankings when evaluating a recommender.
-
-The project also changed how I think about music recommendation apps. A ranked list may appear objective, but the results depend on the available data, the features being considered, and the weights assigned to different preferences. I would like to explore how recommendation systems can account for more complex musical tastes while offering both relevant and diverse suggestions.
+## Future improvements
+- Retrieve genre notes with a separate query so neighbor-genre boosts actually fire.
+- Replace estimated features and the sample history with real data (an audio-features API and an actual listening export).
+- Add diversity re-ranking and an agentic self-check ("are all five picks the same genre? rerun with a penalty").
+- Evaluate with a held-out history (precision@k) instead of only pass/fail cases.

@@ -1,11 +1,14 @@
 flowchart TD
-    A[Listening history CSV + songs.csv] --> B{Input validation guardrail}
-    B -- invalid --> X[Safe error message + log file]
-    B -- valid --> C[Learn profile: likes, replays, skips]
-    C --> D[Retriever: artist and genre notes]
-    D --> E[Scorer: learned weights + neighbor genre + similar artist bonus]
-    E --> F[Skip-pattern penalty + filter already-heard songs]
-    F --> G[Confidence score]
-    G --> H[Top 5 recommendations with explanations]
-    H --> I[eval.py harness / human review]
-    X --> I
+    A["User runs src/cli.py<br/>songs.csv + listening_history.csv"] --> B{"Input validation in history.py<br/>bad rows skipped and logged"}
+    B -- "empty / only skips / unknown ids" --> X["ValueError becomes a friendly error message<br/>details logged to vibefinder.log"]
+    B -- valid --> C["learn_profile: kept songs vs skipped songs<br/>target sound + learned feature weights"]
+    C --> D{"Retrieval enabled?<br/>--baseline turns it off"}
+    D -- yes --> E["Retriever: TF-IDF search over<br/>data/knowledge/music_notes.md"]
+    E --> F["Parse neighbor genres, similar artists,<br/>and artist sound notes"]
+    D -- no --> G
+    F --> G["Score unheard songs: weighted sound match<br/>+ genre, mood, similar-artist bonuses<br/>minus skipped-genre penalty"]
+    G --> H["Confidence score<br/>history size x score gap"]
+    H --> I["Top 5 recommendations<br/>with explanations + trace"]
+    I --> J["Human review of saved outputs<br/>assets/*.txt"]
+    I --> K["eval.py: 8 cases, pytest: 6 tests"]
+    X --> K
