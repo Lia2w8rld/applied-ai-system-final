@@ -1,0 +1,11 @@
+flowchart TD
+    A[Listening history CSV + songs.csv] --> B{Input validation guardrail}
+    B -- invalid --> X[Safe error message + log file]
+    B -- valid --> C[Learn profile: likes, replays, skips]
+    C --> D[Retriever: artist and genre notes]
+    D --> E[Scorer: learned weights + neighbor genre + similar artist bonus]
+    E --> F[Skip-pattern penalty + filter already-heard songs]
+    F --> G[Confidence score]
+    G --> H[Top 5 recommendations with explanations]
+    H --> I[eval.py harness / human review]
+    X --> I
