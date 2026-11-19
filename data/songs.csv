@@ -9,13 +9,37 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
-11,Velvet Morning,Amber Keys,rnb,relaxed,0.48,96,0.73,0.68,0.42
+11,Velvet Morning,Amber Keys,r&b,relaxed,0.48,96,0.73,0.68,0.42
 12,Voltage Dreams,Static Bloom,edm,happy,0.96,140,0.88,0.92,0.02
 13,Blue Hour Letters,June Harbor,indie,chill,0.31,68,0.57,0.39,0.82
 14,Heavy Weather,Iron Season,metal,intense,0.94,160,0.32,0.52,0.08
-15,Golden Hour Drive,Sol Avenue,rnb,happy,0.67,105,0.86,0.75,0.30
+15,Golden Hour Drive,Sol Avenue,r&b,happy,0.67,105,0.86,0.75,0.30
 16,Quiet Pages,Moss Theory,acoustic,focused,0.24,74,0.55,0.28,0.95
 17,Neon Afterglow,Pixel Hearts,synthwave,moody,0.72,116,0.51,0.70,0.19
 18,Sunday Kitchen,Marigold Lane,soul,relaxed,0.44,88,0.78,0.57,0.66
 19,Wildfire Run,Redline Echo,rock,intense,0.89,148,0.41,0.64,0.12
 20,Cloud Watching,Soft Orbit,ambient,chill,0.19,58,0.62,0.35,0.97
+21,Best Part,Daniel Caesar,r&b,romantic,0.30,75,0.55,0.45,0.75
+22,Get You,Daniel Caesar,r&b,romantic,0.42,78,0.50,0.55,0.45
+23,Rewind,Cleo Sol,neo soul,chill,0.35,90,0.60,0.65,0.55
+24,Why Don't You,Cleo Sol,neo soul,romantic,0.30,85,0.45,0.55,0.60
+25,Runaway,Kanye West,hip hop,moody,0.55,90,0.20,0.50,0.30
+26,Gold Digger,Kanye West,hip hop,confident,0.75,93,0.70,0.80,0.10
+27,Respect,Aretha Franklin,soul,confident,0.80,115,0.90,0.70,0.30
+28,Chain of Fools,Aretha Franklin,soul,intense,0.70,118,0.65,0.65,0.35
+29,Putting Up Resistance,Beres Hammond,reggae,romantic,0.55,80,0.75,0.75,0.40
+30,What One Dance Can Do,Beres Hammond,reggae,happy,0.65,92,0.85,0.85,0.35
+31,Doo Wop (That Thing),Lauryn Hill,neo soul,confident,0.70,100,0.75,0.80,0.30
+32,Ex-Factor,Lauryn Hill,neo soul,moody,0.45,70,0.30,0.55,0.40
+33,Love On Top,Beyonce,pop,happy,0.80,100,0.90,0.65,0.15
+34,Halo,Beyonce,pop,romantic,0.65,80,0.50,0.55,0.15
+35,Whatever You Want,Snoh Aalegra,r&b,romantic,0.45,95,0.45,0.60,0.35
+36,I Want You Around,Snoh Aalegra,r&b,moody,0.35,85,0.40,0.60,0.40
+37,Pink + White,Frank Ocean,r&b,chill,0.40,80,0.55,0.50,0.60
+38,Nights,Frank Ocean,r&b,moody,0.50,90,0.35,0.45,0.25
+39,Hotline Bling,Drake,hip hop,moody,0.60,135,0.55,0.85,0.15
+40,One Dance,Drake,hip hop,happy,0.65,104,0.55,0.80,0.05
+41,HUMBLE.,Kendrick Lamar,hip hop,intense,0.90,150,0.40,0.90,0.02
+42,Alright,Kendrick Lamar,hip hop,confident,0.60,110,0.55,0.70,0.10
+43,No Role Modelz,J Cole,hip hop,confident,0.55,100,0.40,0.70,0.10
+44,Love Yourz,J Cole,hip hop,reflective,0.40,82,0.60,0.60,0.20
