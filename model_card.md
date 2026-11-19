@@ -46,7 +46,7 @@ Classroom demonstration of a history-aware, explainable music recommender. Not i
 
 **How I checked the AI's work.** I ran `eval.py` and `pytest`, read the printed trace, and compared the baseline and retrieval outputs. The trace is how I learned the neighbor-genre path never fired.
 
-**TODO (yours):** add 1 to 2 sentences on whether the recommendations *feel* right to you as a listener, and whether you changed any catalog numbers or history rows.
+**TODO: it did feel right as a user to me.
 
 ## Future improvements
 - Retrieve genre notes with a separate query so neighbor-genre boosts actually fire.
