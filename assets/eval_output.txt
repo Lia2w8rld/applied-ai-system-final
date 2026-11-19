@@ -1,0 +1,14 @@
+PASS  sample history file          top pick='Get You' confidence=0.62
+PASS  all likes (r&b/neo soul)     top pick='Pink + White' confidence=0.1
+PASS  mostly skips                 top pick='Get You' confidence=0.16
+PASS  single listen (low conf)     top pick='Get You' confidence=0.03
+PASS  empty history                handled error: Listening history is empty - nothing to learn from.
+PASS  only skips                   handled error: Need at least one liked or played song to learn a profile (only skips or unknown song ids were found).
+PASS  unknown song ids             handled error: Need at least one liked or played song to learn a profile (only skips or unknown song ids were found).
+PASS  every song already heard     handled error: No unheard songs left to recommend.
+
+SUMMARY: 8/8 passed; average confidence on successful runs = 0.23
+
+INFO retrieval changed 1 of 5 picks on the sample history
+  baseline : ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Library Rain']
+  retrieval: ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']

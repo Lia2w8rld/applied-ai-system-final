@@ -1,0 +1,32 @@
+Learned feature weights (higher = better predicts what you keep vs skip):
+  energy: 1.50
+  valence: 1.02
+  danceability: 1.37
+  acousticness: 1.75
+
+=== Baseline (no retrieval) (confidence 0.56) ===
+1. Get You - Daniel Caesar [r&b, romantic] score 9.29
+     - sound match 94% to what you keep playing
+     - you often keep r&b
+     - mood 'romantic' matches songs you keep
+2. I Want You Around - Snoh Aalegra [r&b, moody] score 9.06
+     - sound match 90% to what you keep playing
+     - you often keep r&b
+     - mood 'moody' matches songs you keep
+3. Why Don't You - Cleo Sol [neo soul, romantic] score 8.88
+     - sound match 86% to what you keep playing
+     - you often keep neo soul
+     - mood 'romantic' matches songs you keep
+4. Nights - Frank Ocean [r&b, moody] score 8.74
+     - sound match 84% to what you keep playing
+     - you often keep r&b
+     - mood 'moody' matches songs you keep
+5. Library Rain - Paper Lanterns [lofi, chill] score 8.69
+     - sound match 83% to what you keep playing
+     - you often keep lofi
+     - mood 'chill' matches songs you keep
+
+Trace:
+  - Learned profile from 30 history rows; weights={'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+  - Baseline mode: retrieval disabled
+  - Scored 27 unheard songs; confidence=0.56

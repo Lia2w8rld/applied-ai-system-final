@@ -1,0 +1,36 @@
+2026-11-18 18:26:44,220 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:26:44,223 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']
+2026-11-18 18:26:45,845 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:26:45,846 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']
+2026-11-18 18:26:45,846 INFO Learned weights: {'energy': 1.0, 'valence': 1.0, 'danceability': 1.0, 'acousticness': 1.0}
+2026-11-18 18:26:45,847 INFO Recommended ['Pink + White', 'Get You', "Why Don't You", 'I Want You Around', 'Ex-Factor']
+2026-11-18 18:26:45,847 INFO Learned weights: {'energy': 1.85, 'valence': 1.0, 'danceability': 1.77, 'acousticness': 2.34}
+2026-11-18 18:26:45,848 INFO Recommended ['Get You', 'Whatever You Want', 'Pink + White', 'I Want You Around', 'Nights']
+2026-11-18 18:26:45,848 INFO Learned weights: {'energy': 1.0, 'valence': 1.0, 'danceability': 1.0, 'acousticness': 1.0}
+2026-11-18 18:26:45,849 INFO Recommended ['Get You', 'Whatever You Want', 'Pink + White', 'I Want You Around', 'Nights']
+2026-11-18 18:26:45,849 WARNING History references unknown song id 999; ignored
+2026-11-18 18:26:45,849 WARNING History references unknown song id 998; ignored
+2026-11-18 18:26:45,849 INFO Learned weights: {'energy': 1.0, 'valence': 1.0, 'danceability': 1.0, 'acousticness': 1.0}
+2026-11-18 18:26:45,850 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:26:45,850 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Library Rain']
+2026-11-18 18:26:45,850 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:26:45,851 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']
+2026-11-18 18:27:24,129 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:27:24,131 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']
+2026-11-18 18:27:25,867 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:27:25,867 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Library Rain']
+2026-11-18 18:27:27,467 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:27:27,469 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']
+2026-11-18 18:27:27,469 INFO Learned weights: {'energy': 1.0, 'valence': 1.0, 'danceability': 1.0, 'acousticness': 1.0}
+2026-11-18 18:27:27,470 INFO Recommended ['Pink + White', 'Get You', "Why Don't You", 'I Want You Around', 'Ex-Factor']
+2026-11-18 18:27:27,470 INFO Learned weights: {'energy': 1.85, 'valence': 1.0, 'danceability': 1.77, 'acousticness': 2.34}
+2026-11-18 18:27:27,471 INFO Recommended ['Get You', 'Whatever You Want', 'Pink + White', 'I Want You Around', 'Nights']
+2026-11-18 18:27:27,471 INFO Learned weights: {'energy': 1.0, 'valence': 1.0, 'danceability': 1.0, 'acousticness': 1.0}
+2026-11-18 18:27:27,472 INFO Recommended ['Get You', 'Whatever You Want', 'Pink + White', 'I Want You Around', 'Nights']
+2026-11-18 18:27:27,472 WARNING History references unknown song id 999; ignored
+2026-11-18 18:27:27,472 WARNING History references unknown song id 998; ignored
+2026-11-18 18:27:27,472 INFO Learned weights: {'energy': 1.0, 'valence': 1.0, 'danceability': 1.0, 'acousticness': 1.0}
+2026-11-18 18:27:27,473 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:27:27,473 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Library Rain']
+2026-11-18 18:27:27,473 INFO Learned weights: {'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+2026-11-18 18:27:27,474 INFO Recommended ['Get You', 'I Want You Around', "Why Don't You", 'Nights', 'Chain of Fools']

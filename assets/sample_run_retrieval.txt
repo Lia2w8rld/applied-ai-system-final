@@ -1,0 +1,49 @@
+Learned feature weights (higher = better predicts what you keep vs skip):
+  energy: 1.50
+  valence: 1.02
+  danceability: 1.37
+  acousticness: 1.75
+
+Retrieved notes:
+  [0.48] Artist: Cleo Sol. Genre: neo soul. Similar artists: Lauryn Hill, Snoh Aalegra, D...
+  [0.48] Artist: Snoh Aalegra. Genre: r&b. Similar artists: Daniel Caesar, Frank Ocean, C...
+  [0.47] Artist: Beres Hammond. Genre: reggae. Similar artists: Lauryn Hill, Aretha Frank...
+  [0.43] Artist: Daniel Caesar. Genre: r&b. Similar artists: Frank Ocean, Snoh Aalegra, C...
+  [0.41] Artist: Aretha Franklin. Genre: soul. Similar artists: Beyonce, Lauryn Hill, Ber...
+  [0.39] Artist: Frank Ocean. Genre: r&b. Similar artists: Daniel Caesar, Snoh Aalegra, K...
+
+=== VibeFinder 2.0 (with retrieval) (confidence 0.62) ===
+1. Get You - Daniel Caesar [r&b, romantic] score 10.79
+     - sound match 94% to what you keep playing
+     - you often keep r&b
+     - mood 'romantic' matches songs you keep
+     - Daniel Caesar is similar to artists you replay (from notes)
+     - about Daniel Caesar: gospel-tinged falsetto, slow romantic ballads, sparse arrangements
+2. I Want You Around - Snoh Aalegra [r&b, moody] score 10.56
+     - sound match 90% to what you keep playing
+     - you often keep r&b
+     - mood 'moody' matches songs you keep
+     - Snoh Aalegra is similar to artists you replay (from notes)
+     - about Snoh Aalegra: cinematic, moody, smoky vocals, slow burn
+3. Why Don't You - Cleo Sol [neo soul, romantic] score 10.38
+     - sound match 86% to what you keep playing
+     - you often keep neo soul
+     - mood 'romantic' matches songs you keep
+     - Cleo Sol is similar to artists you replay (from notes)
+     - about Cleo Sol: warm soulful vocals, organic instrumentation, calm and intimate
+4. Nights - Frank Ocean [r&b, moody] score 10.24
+     - sound match 84% to what you keep playing
+     - you often keep r&b
+     - mood 'moody' matches songs you keep
+     - Frank Ocean is similar to artists you replay (from notes)
+     - about Frank Ocean: experimental r&b, introspective, atmospheric and hazy
+5. Chain of Fools - Aretha Franklin [soul, intense] score 9.54
+     - sound match 89% to what you keep playing
+     - you often keep soul
+     - Aretha Franklin is similar to artists you replay (from notes)
+     - about Aretha Franklin: gospel-trained powerhouse vocals, classic soul, high energy and emotion
+
+Trace:
+  - Learned profile from 30 history rows; weights={'energy': 1.5, 'valence': 1.02, 'danceability': 1.37, 'acousticness': 1.75}
+  - Retrieved 6 notes; neighbor genres=[]; similar artists=['aretha franklin', 'beres hammond', 'beyonce', 'cleo sol', 'daniel caesar', 'frank ocean', 'kanye west', 'lauryn hill', 'snoh aalegra']
+  - Scored 27 unheard songs; confidence=0.62
